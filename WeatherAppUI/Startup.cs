@@ -27,13 +27,7 @@ namespace WeatherAppUI
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddHttpClient();    // add httpclient factory for APIs
-            services.AddHttpClient("meta", c => {
-                c.BaseAddress = new Uri(Configuration.GetValue<string>("MetaApi"));
-            });                         // add httpclient factory specifically for metaweather api
-            services.AddHttpClient("bomStation", c => {
-                c.BaseAddress = new Uri(Configuration.GetValue<string>("BomStationApi"));
-            });
+            services.AddHttpClient();
             services.AddHttpClient("openWeather", c => {
                 c.BaseAddress = new Uri(Configuration.GetValue<string>("OpenWeatherApi"));
             });

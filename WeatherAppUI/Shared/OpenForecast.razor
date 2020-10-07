@@ -1,0 +1,57 @@
+﻿@inject IHttpClientFactory _clientFactory
+
+<div class="min-vh-100 @backgroundCssClass d-flex align-items-center justify-content-center">
+    <div class="text-center rounded px-5 py-3 text-gray background-white">
+
+        @if (string.IsNullOrWhiteSpace(errorString) == false)
+        {
+            <div class="h1">@errorString</div>
+        }
+        else if (oneCall is null)
+        {
+            <div class="h1">Loading...</div>
+        }
+        else
+        {
+            <div class="h1">Newcastle @Convert.ToInt32(oneCall.current.temp)&deg;C</div>
+            <img class="image_double" src="@imgUri" /><br />
+
+            <label>@oneCall.current.weather[0].description</label>
+        }
+
+    </div>
+</div>
+
+@code {
+    WeatherAppUI.Models.OpenOneCallModel oneCall;
+    string errorString;
+    string imgUri = "http://openweathermap.org/img/wn/";
+    string backgroundCssClass;
+
+    System.Globalization.TextInfo textInfo = new System.Globalization.CultureInfo("en-AU", false).TextInfo;
+    string weatherMain;
+
+    protected override async Task OnInitializedAsync()
+    {
+        string openWeatherApiKey = System.IO.File.ReadAllText("openweatherapikey.txt");
+        var requestUri = "data/2.5/onecall?appid=" + openWeatherApiKey + "&lat=-32.92&lon=151.77&units=metric";
+        var client = _clientFactory.CreateClient("openWeather");
+
+        try
+        {
+            oneCall = await client.GetFromJsonAsync<WeatherAppUI.Models.OpenOneCallModel>(requestUri);
+            imgUri += oneCall.current.weather[0].icon + "@2x.png";
+            backgroundCssClass = GetBackgroundCssClass(oneCall.current.weather[0].main);
+            errorString = null;
+        }
+        catch (Exception ex)
+        {
+            errorString = $"There was an error getting our forecast: { ex.Message }";
+        }
+    }
+
+    private string GetBackgroundCssClass(string weather)
+    {
+        return "svg_rain_night";
+    }
+}
