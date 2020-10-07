@@ -79,6 +79,13 @@ using WeatherAppUI.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 11 "D:\Projects\WeatherApp\WeatherAppUI\_Imports.razor"
+using WeatherAppUI.Components;
+
+#line default
+#line hidden
+#nullable disable
     public partial class SurveyPrompt : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998

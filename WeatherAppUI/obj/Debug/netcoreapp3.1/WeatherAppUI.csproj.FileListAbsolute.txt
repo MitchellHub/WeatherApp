@@ -8,7 +8,6 @@ D:\Projects\WeatherApp\WeatherAppUI\obj\Debug\netcoreapp3.1\WeatherAppUI.Assembl
 D:\Projects\WeatherApp\WeatherAppUI\obj\Debug\netcoreapp3.1\WeatherAppUI.RazorComponent.input.cache
 D:\Projects\WeatherApp\WeatherAppUI\obj\Debug\netcoreapp3.1\RazorDeclaration\App.razor.g.cs
 D:\Projects\WeatherApp\WeatherAppUI\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Counter.razor.g.cs
-D:\Projects\WeatherApp\WeatherAppUI\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\FetchData.razor.g.cs
 D:\Projects\WeatherApp\WeatherAppUI\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Index.razor.g.cs
 D:\Projects\WeatherApp\WeatherAppUI\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\WeatherData.razor.g.cs
 D:\Projects\WeatherApp\WeatherAppUI\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\MainLayout.razor.g.cs
@@ -40,7 +39,6 @@ D:\Projects\WeatherApp\WeatherAppUI\bin\Debug\netcoreapp3.1\System.Text.Json.dll
 D:\Projects\WeatherApp\WeatherAppUI\obj\Debug\netcoreapp3.1\RazorDeclaration\WeatherAppUI.dll
 D:\Projects\WeatherApp\WeatherAppUI\obj\Debug\netcoreapp3.1\Razor\App.razor.g.cs
 D:\Projects\WeatherApp\WeatherAppUI\obj\Debug\netcoreapp3.1\Razor\Pages\Counter.razor.g.cs
-D:\Projects\WeatherApp\WeatherAppUI\obj\Debug\netcoreapp3.1\Razor\Pages\FetchData.razor.g.cs
 D:\Projects\WeatherApp\WeatherAppUI\obj\Debug\netcoreapp3.1\Razor\Pages\Index.razor.g.cs
 D:\Projects\WeatherApp\WeatherAppUI\obj\Debug\netcoreapp3.1\Razor\Pages\WeatherData.razor.g.cs
 D:\Projects\WeatherApp\WeatherAppUI\obj\Debug\netcoreapp3.1\Razor\Shared\MainLayout.razor.g.cs
@@ -52,3 +50,5 @@ D:\Projects\WeatherApp\WeatherAppUI\obj\Debug\netcoreapp3.1\WeatherAppUI.csproj.
 D:\Projects\WeatherApp\WeatherAppUI\obj\Debug\netcoreapp3.1\WeatherAppUI.dll
 D:\Projects\WeatherApp\WeatherAppUI\obj\Debug\netcoreapp3.1\WeatherAppUI.pdb
 D:\Projects\WeatherApp\WeatherAppUI\obj\Debug\netcoreapp3.1\WeatherAppUI.genruntimeconfig.cache
+D:\Projects\WeatherApp\WeatherAppUI\obj\Debug\netcoreapp3.1\RazorDeclaration\Components\OpenForecast.razor.g.cs
+D:\Projects\WeatherApp\WeatherAppUI\obj\Debug\netcoreapp3.1\Razor\Components\OpenForecast.razor.g.cs

@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using WeatherAppUI.Data;
 
 namespace WeatherAppUI
 {
@@ -28,12 +27,16 @@ namespace WeatherAppUI
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
             services.AddHttpClient();    // add httpclient factory for APIs
             services.AddHttpClient("meta", c => {
                 c.BaseAddress = new Uri(Configuration.GetValue<string>("MetaApi"));
             });                         // add httpclient factory specifically for metaweather api
-            //services.AddHttpClient("bom")
+            services.AddHttpClient("bomStation", c => {
+                c.BaseAddress = new Uri(Configuration.GetValue<string>("BomStationApi"));
+            });
+            services.AddHttpClient("openWeather", c => {
+                c.BaseAddress = new Uri(Configuration.GetValue<string>("OpenWeatherApi"));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
