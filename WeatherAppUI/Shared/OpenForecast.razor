@@ -14,7 +14,7 @@
         else
         {
             <div class="h1">Newcastle @Convert.ToInt32(oneCall.current.temp)&deg;C</div>
-            <img class="image_double" src="@imgUri" /><br />
+            <img class="image_double" src="@oneCall.current.weather[0].icon" /><br />
 
             <label>@oneCall.current.weather[0].description</label>
         }
@@ -25,7 +25,6 @@
 @code {
     WeatherAppUI.Models.OpenOneCallModel oneCall;
     string errorString;
-    string imgUri = "http://openweathermap.org/img/wn/";
     string backgroundCssClass;
 
     System.Globalization.TextInfo textInfo = new System.Globalization.CultureInfo("en-AU", false).TextInfo;
@@ -33,6 +32,7 @@
 
     protected override async Task OnInitializedAsync()
     {
+        // openweatherapikey.txt is ignored from repo
         string openWeatherApiKey = System.IO.File.ReadAllText("openweatherapikey.txt");
         var requestUri = "data/2.5/onecall?appid=" + openWeatherApiKey + "&lat=-32.92&lon=151.77&units=metric";
         var client = _clientFactory.CreateClient("openWeather");
@@ -40,7 +40,6 @@
         try
         {
             oneCall = await client.GetFromJsonAsync<WeatherAppUI.Models.OpenOneCallModel>(requestUri);
-            imgUri += oneCall.current.weather[0].icon + "@2x.png";
             backgroundCssClass = GetBackgroundCssClass(oneCall.current.weather[0].main);
             errorString = null;
         }
@@ -52,6 +51,6 @@
 
     private string GetBackgroundCssClass(string weather)
     {
-        return "svg_rain_night";
+        return "svg_cloud_day";
     }
 }

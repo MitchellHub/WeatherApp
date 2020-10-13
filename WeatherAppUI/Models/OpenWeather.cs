@@ -9,6 +9,7 @@ namespace WeatherAppUI.Models
     public class OpenWeather
     {
         private string _description;
+        private string _icon;
 
         public int id { get; set; }
         public string main { get; set; }
@@ -20,6 +21,11 @@ namespace WeatherAppUI.Models
                 _description = textInfo.ToTitleCase(value);
             }
         }
-        public string icon { get; set; }
+        public string icon {
+            get => _icon;
+            set {
+                _icon = "http://openweathermap.org/img/wn/" + value + "@2x.png";
+            }
+        }
     }
 }
